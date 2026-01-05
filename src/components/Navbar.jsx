@@ -1,12 +1,14 @@
 import { useState } from "react";
 import Image from "./Image.jsx";
+import { Link } from "react-router-dom";
+
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   return (
     <div className="w-full h-16 md:h-20 flex items-center justify-between">
       {/* LOGO */}
 
-      <div className="flex items-center gap-4 text-2xl font-bold">
+      <Link to={"/"} className="flex items-center gap-4 text-2xl font-bold">
         <Image
           src="/logo.png"
           width={32}
@@ -16,7 +18,7 @@ const Navbar = () => {
         />
 
         <span>tdnlog</span>
-      </div>
+      </Link>
       {/* MOBILE MENU */}
       <div className="md:hidden">
         {/* MOBILE BUTTON */}
@@ -32,28 +34,28 @@ const Navbar = () => {
             open ? "-right-0" : "-right-[100%]"
           }`}
         >
-          <a href="/">Trang chủ</a>
-          <a href="/">Xu hướng</a>
-          <a href="/">Nổi bật</a>
-          <a href="/">Giới thiệu</a>
-          <a href="">
+          <Link to="/">Xu hướng</Link>
+          <Link to="/">Nổi bật</Link>
+          <Link to="/">Trang chủ</Link>
+          <Link to="/">Giới thiệu</Link>
+          <Link to="">
             <button className="py-2 px-4 rounded-3xl bg-blue-800 text-white">
               Đăng nhập
             </button>
-          </a>
+          </Link>
         </div>
       </div>
       {/* DESKTOP MENU */}
       <div className="hidden md:flex items-center gap-8 xl:gap-12 font-medium">
-        <a href="/">Trang chủ</a>
-        <a href="/">Xu hướng</a>
-        <a href="/">Nổi bật</a>
-        <a href="/">Giới thiệu</a>
-        <a href="">
+        <Link to="/">Trang chủ</Link>
+        <Link to="/">Xu hướng</Link>
+        <Link to="/">Nổi bật</Link>
+        <Link to="/">Giới thiệu</Link>
+        <Link to="">
           <button className="py-2 px-4 rounded-3xl bg-blue-800 text-white">
             Đăng nhập
           </button>
-        </a>
+        </Link>
       </div>
     </div>
   );
